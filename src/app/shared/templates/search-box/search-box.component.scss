@@ -1,0 +1,36 @@
+.search-box {
+  background: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 4.75px;
+  display: flex;
+  height: 40px;
+}
+
+.search-box input {
+  width: calc(100% - 30px);
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+::-webkit-input-placeholder {
+  /* Edge */
+  font-weight: 600;
+  font-size: 12px;
+  color: #CFD8E6;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer */
+  font-weight: 600;
+  font-size: 12px;
+  color: #CFD8E6;
+}
+
+::placeholder {
+  font-weight: 600;
+  font-size: 12px;
+  color: #CFD8E6;
+}

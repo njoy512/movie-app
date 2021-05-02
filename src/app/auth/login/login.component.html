@@ -1,0 +1,64 @@
+<div class="container">
+
+  <!-- form -->
+  <div class="row px-5 py-4 mt-5">
+    <div class="offset-0 offset-lg-3 col-12 col-lg-6">
+      <h1 class="text-secondary">
+        Login
+      </h1>
+
+      <form [formGroup]="loginForm">
+        <div class="justify-content-center py-4">
+          <div *ngIf="error" class="col-12 p-0 text-left ">
+            <div class="alert alert-danger font-s-xs" role="alert">
+              {{ error }}
+            </div>
+          </div>
+          <div>
+            <div class="form-group">
+              <label class="font-1-bold text-secondary">Username</label>
+              <input type="email" class="form-control form-control-lg" formControlName="username" placeholder="Username"
+                [ngClass]="{
+                        'has-danger': fcontrol.username.invalid && (fcontrol.username.touched || submitted),
+                        'has-success': fcontrol.username.valid}" required>
+              <small *ngIf="fcontrol.username.invalid && (fcontrol.username.touched || submitted)"
+                class="form-text text-danger">{{ errMessage }}</small>
+              <small *ngIf="accessDenied && submitted" class="form-text text-danger">{{ errTypeMsg }}</small>
+              <small
+                *ngIf="!(accessDenied && submitted) && !(fcontrol.username.invalid && (fcontrol.username.touched || submitted))"
+                class="form-text text-danger">
+                &nbsp;
+              </small>
+            </div>
+          </div><!-- Username -->
+
+          <div>
+            <div class="form-group">
+              <label class="font-1-bold text-secondary">Password</label>
+              <input type="password" class="form-control form-control-lg" formControlName="password"
+                placeholder="Password" [ngClass]="{
+                        'has-danger': fcontrol.password.invalid && (fcontrol.password.touched || submitted),
+                        'has-success': fcontrol.password.valid}" required>
+              <!-- <small><a routerLink="/login/forgotpass" class="text-muted float-right">Forgot password?</a></small> -->
+              <small *ngIf="fcontrol.password.invalid && (fcontrol.password.touched || submitted)"
+                class="form-text text-danger">{{ errMessage}}</small>
+            </div>
+
+          </div><!-- Password -->
+
+          <div>
+            <div class="form-group">
+              <label class="font-1-bold"></label>
+              <button type="submit" [disabled]="fcontrol.username.invalid || fcontrol.password.invalid"
+                class="btn btn-primary btn-lg" (click)="submit()">
+                Login</button>
+            </div>
+          </div><!-- button -->
+        </div>
+      </form>
+
+    </div>
+  </div>
+  <!-- /form -->
+
+</div>

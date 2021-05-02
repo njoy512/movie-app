@@ -1,0 +1,32 @@
+<div class="modal-header">
+
+  <div class="text-truncate">
+    {{movieDetails.title}}
+  </div>
+  <div>
+    <img height="23" class="cursor-pointer" (click)="onNoClick()" src="assets/images/close-btn.svg" alt="">
+  </div>
+
+</div>
+
+<div class="modal-body">
+  <div class="d-flex flex-column align-items-center justify-contents-between">
+
+    <div>
+      <img class="img-square-m" [src]="nameUrl" alt="">
+    </div>
+
+    <div class="font-20px font-wt-600 mt-3 mb-2">
+      {{movieDetails.title}}
+    </div>
+
+    <div class="font-12px font-wt-600 mb-3">
+      {{movieDetails.genres}}
+    </div>
+
+    <div class="font-13px text-break max-ht-50px">
+      {{movieDetails.description}}
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container-fluid scroll-body" infinite-scroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50"
+  [scrollWindow]="false" (scrolled)="onScrollDown()">
+
+  <!-- search -->
+  <div class="search-box row">
+    <div class="col-12 col-lg-6 offset-lg-3">
+      <app-search-box (searchEvent)="searchItem($event)" [placeholder]="'Search name'"></app-search-box>
+    </div>
+  </div>
+  <!-- /search -->
+
+  <div *ngIf="movieList.length != 0" class="row my-4">
+
+    <div *ngFor="let item of filteredMovieList" class="col-12 col-md-6 col-lg-4 mb-3">
+      <app-movie-card [movieDetails]="item"></app-movie-card>
+    </div>
+
+  </div>
+</div>

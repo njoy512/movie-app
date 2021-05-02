@@ -1,0 +1,22 @@
+<div class="movie-card p-3" (click)="viewDetailsModal()">
+
+  <div>
+    <img class="img-circle-sm" [src]="nameUrl" alt="">
+  </div>
+
+  <div class="font-20px font-wt-600 mt-3 mb-2">
+    {{movieDetails.title}}
+  </div>
+
+  <div class="font-12px font-wt-600 mb-3">
+    {{movieDetails.genres}}
+  </div>
+
+  <div class="font-13px text-break max-ht-50px">
+    {{movieDetails.description}}
+    <div class="desc-blur">
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,12 @@
+.scroll-body {
+  height: calc(100vh - 64px);
+  overflow-y: scroll;
+  position: relative;
+}
+
+.search-box {
+  padding-top: 5px;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+}

@@ -1,0 +1,14 @@
+.modal-header {
+  font-size: 18px;
+  font-weight: 600;
+  background: #F8F8F8;
+  border-radius: 10px 10px 0px 0px;
+  margin: -24px -24px 0 -24px;
+  border: none;
+  padding: 20px 35px;
+}
+
+.modal-body {
+  max-height: calc(90vh - 152px);
+  overflow-y: auto;
+}

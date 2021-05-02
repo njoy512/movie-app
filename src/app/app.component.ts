@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'movies-app';
+  isDarkTheme: any = false;
+
+  ngOnInit(): void {
+    this.isDarkTheme = localStorage.getItem('theme') === "Dark" ? true : false;
+  }
+
+  selectTheme(isDarkTheme: any) {
+    this.isDarkTheme = isDarkTheme;
+  }
 }
