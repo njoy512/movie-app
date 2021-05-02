@@ -18,6 +18,7 @@ export class LandingPageComponent implements OnInit {
 
   searchChanged: Subject<string> = new Subject<string>();
   filteredMovieList: any = [];
+  searchStr = '';
 
   nextPageUrl: any = null;
   prevPageUrl: any = null;
@@ -52,7 +53,7 @@ export class LandingPageComponent implements OnInit {
       } else {
 
       }
-      this.searchItem('');
+      this.searchItem(this.searchStr);
     }, Error => {
       this._dataService.hideloader();
       // console.log('Err is ', Error);
@@ -88,6 +89,7 @@ export class LandingPageComponent implements OnInit {
   }
 
   searchItem(text: string) {
+    this.searchStr = text;
     this.searchChanged.next(text);
   }
 
